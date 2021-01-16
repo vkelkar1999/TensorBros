@@ -4,10 +4,10 @@ Repository for HackDavis 2021
 Consisting of members:
 Samuel Garcia,
 Vikram Kelkar,
-Philip Lagoc,
+Phillip Lagoc,
 Justin Leung,
 
-Our poject is a Vaccine tracker and calculator for the state of California.
+Our project is a Vaccine tracker and calculator for the state of California.
 We gather information from the user regarding to health and occupation and following the standards laid out by the California department of health,
 we predict what phase an individual belongs in and an estimated date that they will be eligible for the vaccine.
 
