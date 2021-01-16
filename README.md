@@ -15,4 +15,4 @@ If they are already eligible, we ask for their zip code to provide them with the
 
 cdph.ca.gov/Programs/CID/DCDC/CDPH%20Document%20Library/COVID-19/COVID-19-Vaccination-Plan-California-Interim-Draft_V1.0.pdf
 
-Built off Google Cloud and Firebase, we are using Tensorflow to build our prediction model and developing the front-end in react.
+Deployed in Google Cloud and Firebase, we are using Tensorflow to build our prediction model and developing the front-end in react.
