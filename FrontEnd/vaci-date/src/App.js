@@ -2,22 +2,13 @@ import logo from './logo.svg';
 import './App.css';
 import { Component, React, useState } from 'react';
 import moreInfo from "./moreInfo"; 
-import { Link } from "react-router-dom";
+import {withRouter} from 'react-router-dom';
 
   /*const handleChange = event => {
     this.setState({ username: event.target.value });
   }; */
 
   const rankings = ['1A', '1B', '1C', '2', '3']
-
-  function NavigationDemo() {
-
-    return (
-     <div>
-     <Link  to={{pathname: moreInfo}}>NavigateNow</Link>
-     </div>
-    );
-  }
 
   class App extends Component {
     constructor(props) {
@@ -29,6 +20,10 @@ import { Link } from "react-router-dom";
       };
     }
   
+    nextPath(path) {
+      this.props.history.push(path);
+    }
+
     handleChange = (event) => {
       console.log('I was triggered during render')
       this.setState({
@@ -137,6 +132,10 @@ import { Link } from "react-router-dom";
           </div>
           <button type="submit">Do the thing</button>
         </form>
+
+        <button onClick={() => this.nextPath('./moreInfo') }>
+        change path 
+      </button>
         </div>
       );
     }
