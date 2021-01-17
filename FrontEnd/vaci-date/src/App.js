@@ -1,12 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
 import { Component, React, useState } from 'react';
-
-
+import moreInfo from "./moreInfo"; 
+import { Link } from "react-router-dom";
 
   /*const handleChange = event => {
     this.setState({ username: event.target.value });
   }; */
+
+  const rankings = ['1A', '1B', '1C', '2', '3']
+
+  function NavigationDemo() {
+
+    return (
+     <div>
+     <Link  to={{pathname: moreInfo}}>NavigateNow</Link>
+     </div>
+    );
+  }
 
   class App extends Component {
     constructor(props) {
@@ -32,7 +43,7 @@ import { Component, React, useState } from 'react';
         job: this.state.job,
         house: this.state.house
     };
-      console.log(this.state)
+      
     };
     
     render() {
@@ -43,28 +54,28 @@ import { Component, React, useState } from 'react';
           <div className="radio-buttons">
             65+
             <input
-              value="1"
+              value="1B"
               name="age"
               type="radio"
               onChange={this.handleChange}
             />
             55-64
             <input
-              value="2"
+              value="1C"
               name="age"
               type="radio"
               onChange={this.handleChange}
             />
             18-54
             <input
-              value="3"
+              value="2"
               name="age"
               type="radio"
               onChange={this.handleChange}
             />
             Under 18
             <input
-              value="4"
+              value="3"
               name="age"
               type="radio"
               onChange={this.handleChange}
@@ -73,28 +84,28 @@ import { Component, React, useState } from 'react';
             <div className="radio-buttons">
             Emergency Medical Services
             <input
-              value="1"
+              value="1A"
               name="job"
               type="radio"
               onChange={this.handleChange}
             />
             Health Care Worker
             <input
-              value="2"
+              value="1B"
               name="job"
               type="radio"
               onChange={this.handleChange}
             />
             Commercial and Service Jobs
             <input
-              value="3"
+              value="1C"
               name="job"
               type="radio"
               onChange={this.handleChange}
             />
             Working from Home
             <input
-              value="4"
+              value="3"
               name="job"
               type="radio"
               onChange={this.handleChange}
@@ -103,14 +114,14 @@ import { Component, React, useState } from 'react';
             <div className="radio-buttons">
             Nursing Home
             <input
-              value="1"
+              value="1A"
               name="house"
               type="radio"
               onChange={this.handleChange}
             />
             Large Community
             <input
-              value="2"
+              value="1C"
               name="house"
               type="radio"
               onChange={this.handleChange}
