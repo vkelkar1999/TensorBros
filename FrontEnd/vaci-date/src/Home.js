@@ -65,7 +65,7 @@ class Home extends Component {
     render() {
       const {currentUser, setCurrentUser} = this.context
       return (  
-        <div className="w-100">
+        <div className="d-flex align-items-start justify-content-center"  style = {{minHeight: "100vh"}}>
             <Card>
                 <Card.Body>
                     <h2 className="text-center mb-4">Information About You</h2>
@@ -161,15 +161,16 @@ class Home extends Component {
                                     onChange={this.handleChange}
                                 /> 
                         </Form.Group>
+                        <Button type="submit">Do the thing</Button>
+        
+                        <Link
+                        to={
+                        `MoreInfo/${this.state.low}`
+                        }> moreInfo </Link>
                     </Form>
                 </Card.Body>
             </Card>
-          <Button type="submit">Do the thing</Button>
-        
-        <Link
-        to={
-        `MoreInfo/${this.state.low}`
-        }> moreInfo </Link>
+
         
         </div>
       );
