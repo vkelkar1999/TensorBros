@@ -21,7 +21,7 @@ axios.defaults.baseURL = 'http://localhost:5000/lucky-outpost-301600/us-central1
     render() {
       const user = {name:'Tania', LoggedIn:true}
       return (  
-        <Container className='d-flex align-items-start justify-content-center' style = {{minHeight: "100vh"}}>
+        <Container fluid={true} >
           <Router>
             <Switch>
               <UserProvider>

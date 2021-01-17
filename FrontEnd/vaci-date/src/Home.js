@@ -78,6 +78,7 @@ class Home extends Component {
     {
       lowest = "3"
     }
+    
     this.setState({ low:lowest }, () => {                              
         //callback
         console.log(this.state.low) // myname
@@ -87,7 +88,7 @@ class Home extends Component {
     render() {
       const {currentUser, setCurrentUser} = this.context
       return (  
-        <div className="w-100">
+        <div className="d-flex align-items-start justify-content-center"  style = {{minHeight: "100vh"}}>
             <Card>
                 <Card.Body>
                     <h2 className="text-center mb-4">Information About You</h2>
