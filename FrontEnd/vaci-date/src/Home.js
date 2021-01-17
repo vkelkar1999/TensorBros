@@ -16,6 +16,7 @@ class Home extends Component {
         age:"",
         house:"",
         job:"",
+        low:"test"
       };
     }
     componentDidMount(){
@@ -27,9 +28,11 @@ class Home extends Component {
     }
 
     handleChange = (event) => {
-      this.setState({
-        [event.target.name]:event.target.value
-      })
+      this.setState({ [event.target.name]:event.target.value }, () => {                              
+        //callback
+        console.log(this.state.low) // myname
+      });
+      
     };
 
     handleSubmit = (event) => { 
@@ -38,10 +41,26 @@ class Home extends Component {
         age: this.state.age,
         job: this.state.job,
         house: this.state.house
-    };
-    //setCurr
+    }
+    var lowest = "";
+    if(parseInt(userData.age) < parseInt(userData.job) )
+    {
+        lowest = userData.age
+    }
+    else
+    {
+      lowest = userData.job
+    }
+    if(parseInt(lowest) > parseInt(userData.house) )
+    {
+        lowest = userData.house
+    }
 
-    };
+    this.setState({ low:lowest }, () => {                              
+        //callback
+        console.log(this.state.low) // myname
+      });
+    }
     
     render() {
       const {currentUser, setCurrentUser} = this.context
@@ -54,7 +73,7 @@ class Home extends Component {
                         <Form.Group id="Age">
                             <Form.Label>Age</Form.Label>
                                 <Form.Check
-                                    value="1B"
+                                    value="2"
                                     name="age"
                                     label="65+"
                                     type="radio"
@@ -62,21 +81,21 @@ class Home extends Component {
                                 /> 
 
                                 <Form.Check
-                                    value="1C"
+                                    value="3"
                                     name="age"
                                     label="55 - 64"
                                     type="radio"
                                     onChange={this.handleChange}
                                 /> 
                                 <Form.Check
-                                    value="2"
+                                    value="4"
                                     name="age"
                                     label="18 - 54"
                                     type="radio"
                                     onChange={this.handleChange}
                                 /> 
                                 <Form.Check
-                                    value="3"
+                                    value="5"
                                     name="age"
                                     label="Under 18"
                                     type="radio"
@@ -87,7 +106,7 @@ class Home extends Component {
                             <Form.Label>Age</Form.Label>
                                 <Form.Check
                                     label="Emergency Medical Services"
-                                    value="1A"
+                                    value="1"
                                     name="job"
                                     type="radio"
                                     onChange={this.handleChange}
@@ -95,7 +114,7 @@ class Home extends Component {
 
                                 <Form.Check
                                     label="Health Care Worker"
-                                    value="1B"
+                                    value="2"
                                     name="job"
                                     type="radio"
                                     onChange={this.handleChange}
@@ -103,14 +122,14 @@ class Home extends Component {
 
                                 <Form.Check
                                     label="Commercial and Service Jobs"
-                                    value="1C"
+                                    value="3"
                                     name="job"
                                     type="radio"
                                     onChange={this.handleChange}
                                 /> 
                                 <Form.Check
                                     label="Working from Home"
-                                    value="3"
+                                    value="5"
                                     name="job"
                                     type="radio"
                                     onChange={this.handleChange}
@@ -120,7 +139,7 @@ class Home extends Component {
                             <Form.Label>Housing Situation</Form.Label>
                                 <Form.Check
                                     label="Nursing Home"
-                                    value="1A"
+                                    value="1"
                                     name="house"
                                     type="radio"
                                     onChange={this.handleChange}
@@ -128,16 +147,16 @@ class Home extends Component {
 
                                 <Form.Check
                                     label="Large Community"
-                                    value="1C"
-                                    name="job"
+                                    value="3"
+                                    name="house"
                                     type="radio"
                                     onChange={this.handleChange}
                                 /> 
 
                                 <Form.Check
                                     label="Private Residence"
-                                    value="3"
-                                    name="job"
+                                    value="5"
+                                    name="house"
                                     type="radio"
                                     onChange={this.handleChange}
                                 /> 
@@ -145,100 +164,12 @@ class Home extends Component {
                     </Form>
                 </Card.Body>
             </Card>
-        <Form onSubmit={this.handleSubmit}>
-        <h2>Age</h2>
-          <div className="radio-buttons">
-            65+
-            <input
-              value="1B"
-              name="age"
-              type="radio"
-              onChange={this.handleChange}
-            />
-            55-64
-            <input
-              value="1C"
-              name="age"
-              type="radio"
-              onChange={this.handleChange}
-            />
-            18-54
-            <input
-              value="2"
-              name="age"
-              type="radio"
-              onChange={this.handleChange}
-            />
-            Under 18
-            <input
-              value="3"
-              name="age"
-              type="radio"
-              onChange={this.handleChange}
-            />
-            </div> 
-        <h2>Occupation</h2> 
-            <div className="radio-buttons">
-            Emergency Medical Services
-            <input
-              value="1A"
-              name="job"
-              type="radio"
-              onChange={this.handleChange}
-            />
-            Health Care Worker
-            <input
-              value="1B"
-              name="job"
-              type="radio"
-              onChange={this.handleChange}
-            />
-            Commercial and Service Jobs
-            <input
-              value="1C"
-              name="job"
-              type="radio"
-              onChange={this.handleChange}
-            />
-            Working from Home
-            <input
-              value="3"
-              name="job"
-              type="radio"
-              onChange={this.handleChange}
-            />
-            </div> 
-        <h2>Housing Situation</h2>
-            <div className="radio-buttons">
-            Nursing Home
-            <input
-              value="1A"
-              name="house"
-              type="radio"
-              onChange={this.handleChange}
-            />
-            Large Community
-            <input
-              value="1C"
-              name="house"
-              type="radio"
-              onChange={this.handleChange}
-            />
-            Private Residence
-            <input
-              value="3"
-              name="house"
-              type="radio"
-              onChange={this.handleChange}
-            />
-            </div> 
-
           <Button type="submit">Do the thing</Button>
-        </Form>
+        
         <Link
-      to={
-        `MoreInfo/foo`
-  }> moreInfo </Link>
+        to={
+        `MoreInfo/${this.state.low}`
+        }> moreInfo </Link>
         
         </div>
       );

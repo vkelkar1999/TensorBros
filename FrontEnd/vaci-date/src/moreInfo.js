@@ -23,22 +23,16 @@ import axios from 'axios';
 
    const handleSubmit = (event) => { 
       event.preventDefault();
-      console.log(this.state.email)
+      //console.log(this.state.email)
   } ;
+   /* const validateForms()
+     console.log(userData)
+     axios.post('/users', userData)
+     .then((res) => {console.log(res)})
+     .catch((err) => console.log(err));
+  } */
    
-    
-    /*  const userData = { 
-        email:this.state.email,
-        phoneNumber:this.state.phoneNumber
-    }; */
-   // this.validateForms()
-    // console.log(userData)
-    // axios.post('/users', userData)
-    // .then((res) => {console.log(res)})
-    // .catch((err) => console.log(err));
- // }
-   
- /* validateForms = () =>{
+/* const validateForms = () =>{
     this.state.errors = {}
     const email = this.state.email;
     const phoneNumber = this.state.phoneNumber;
@@ -55,7 +49,7 @@ import axios from 'axios';
       return false
     }
     return true
-  } */
+  }  */
 
   //const { errors } = this.state;
       return(
@@ -64,17 +58,15 @@ import axios from 'axios';
             <Card.Body>
               <Card.Title className="text-center">More Information About you</Card.Title>
             <Form onSubmit={handleSubmit}>
-              <Form onSubmit={this.handleSubmit}>
                 <Form.Group id="email">
                   <Form.Label className="text-center" style={{width: "100%"}} id="email">Email</Form.Label>
                   <Form.Control type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} required/>
                 </Form.Group>
                 <Form.Group className="text-center" style={{width: "100%"}} id="phoneNumber">
                   <Form.Label>Phone Number Starting with Country Code</Form.Label>
-                  <Form.Control type="number" name="phoneNumber" maxLength="10" minLength="10"value={number} onChange={e => setNumber(e.target.value)} required> </Form.Control>
+                  <Form.Control type="number" name="phoneNumber" maxLength="10" minLength="10"value={number} onChange={e => setNumber(e.target.value)} required/>
                 </Form.Group>
               <Button className="w-100" type="submit">Submit</Button>
-            </Form>
             </Form>
             </Card.Body>
           </Card>
