@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './Home';
 import axios from 'axios';
 import {UserContext, UserProvider} from './UserContext'
-import Maps from "./Maps"
+import maps from "./Maps"
   /*const handleChange = event => {
     this.setState({ username: event.target.value });
   }; */

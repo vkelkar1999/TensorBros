@@ -18,6 +18,8 @@ import axios from 'axios';
       const [number, setNumber] = useState('');
       const [errors, setError] = useState('');
 
+
+      // Category that is passed
       const {id} = props.match.params;
       console.log(id)
 
