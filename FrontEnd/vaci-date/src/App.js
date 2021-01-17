@@ -27,7 +27,7 @@ axios.defaults.baseURL = 'http://localhost:5000/lucky-outpost-301600/us-central1
               <UserProvider>
                 <Route exact path='/' component={Home}/>
                 <Route path='/moreInfo/:id' component={moreInfo}/>
-                <Route path='/map' component={maps}/>
+                <Route path='/map' component={Maps}/>
               </UserProvider>
             </Switch>
           </Router>
