@@ -23,15 +23,10 @@ axios.defaults.baseURL = 'http://localhost:5000/lucky-outpost-301600/us-central1
         <Container className='d-flex align-items-start justify-content-center' style = {{minHeight: "100vh"}}>
           <Router>
             <Switch>
-<<<<<<< Updated upstream
-              <Route exact path='/' component={Home}/>
-              <Route path='/MoreInfo/:id' component={moreInfo}/>
-=======
               <UserProvider>
                 <Route exact path='/' component={Home}/>
-                <Route path='/moreInfo' component={moreInfo}/>
+                <Route path='/moreInfo/:id' component={moreInfo}/>
               </UserProvider>
->>>>>>> Stashed changes
             </Switch>
           </Router>
         </Container>
