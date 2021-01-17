@@ -49,6 +49,9 @@ import { Component, React, useState } from 'react';
             type="radio"
             onChange={this.handleChange}
           />
+          <div>
+          Selected option is : {this.state.platform}
+        </div>
         </div>
       );
     }
