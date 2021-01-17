@@ -11,15 +11,22 @@ import { Component, React, useState } from 'react';
   class App extends Component {
     constructor(props) {
       super(props);
-      this.state = {};
+      this.state = {
+        age:"",
+        house:"",
+        job:"",
+      };
     }
   
-    handleChange = e => {
-      const { name, value } = e.target;
-  
+    handleChange = (event) => {
       this.setState({
-        [name]: value
-      });
+        [event.target.name]:event.target.value
+      })
+      // const { name, value } = e.target;
+  
+      // this.setState({
+      //   [name]: value
+      // });
     };
   
     render() {
@@ -27,30 +34,27 @@ import { Component, React, useState } from 'react';
         <div className="radio-buttons">
           Windows
           <input
-            id="windows"
-            value="windows"
-            name="platform"
+            value="1"
+            name="age"
             type="radio"
             onChange={this.handleChange}
           />
           Mac
           <input
-            id="mac"
-            value="mac"
-            name="platform"
+            value="2"
+            name="age"
             type="radio"
             onChange={this.handleChange}
           />
           Linux
           <input
-            id="linux"
-            value="linux"
-            name="platform"
+            value="3"
+            name="age"
             type="radio"
             onChange={this.handleChange}
           />
           <div>
-          Selected option is : {this.state.platform}
+          Selected option is : {this.state.age}
         </div>
         </div>
       );
