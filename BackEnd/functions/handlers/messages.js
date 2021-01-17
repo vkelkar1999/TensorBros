@@ -18,7 +18,8 @@ exports.messageUsers = (req, res) => {
 				     from: fromNumber,
 				     to: '+' + number.toString()
 				   })
-				  .catch((err) => console.log("Error with " + name + " account"))
+				  .then(message => console.log(message.sid + " was sent sucessfully"))
+				  .catch((error) => console.log(error));
 			});
 			return res.status(201).json({message:"Everything worked!"})
 		})

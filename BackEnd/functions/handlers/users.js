@@ -19,14 +19,14 @@ exports.getUsers = (req, res) => {
 
 exports.addUsers = (req, res) =>{
 	const user = {
-		 email: req.body.email,
-		 phoneNumber: req.body.phoneNumber
+		 Email: req.body.email,
+		 PhoneNumber: req.body.phoneNumber
 	}
 	db.collection('Users').add(user)
 	.then((doc) => { 
 		const newUser = user;
 		user.userId = doc.id;
-		res.json(user);
+		return res.json(user);
 	})
 	.catch((err) => {
       res.status(500).json({ error: 'something went wrong' });

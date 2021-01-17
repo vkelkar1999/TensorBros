@@ -1,12 +1,18 @@
-import { Component, React, useState } from 'react';
+import { Component, React, useState, useContext } from 'react';
 import {Button, Form, Card} from 'react-bootstrap';
+<<<<<<< Updated upstream
 import {Link, StaticRouter} from 'react-router-dom';
+=======
+import { useUser } from './UserContext';
+>>>>>>> Stashed changes
 
 
 const rankings = ['1A', '1B', '1C', '2', '3']
 
 
+
 class Home extends Component {
+  static contextType = useUser
     constructor(props) {
       super(props);
       this.state = {
@@ -15,9 +21,18 @@ class Home extends Component {
         job:"",
       };
     }
+<<<<<<< Updated upstream
+=======
+    componentDidMount(){
+      const user = this.context
+      console.log(user)
+    }
+    nextPath(path) {
+      this.props.history.push(path);
+    }
+>>>>>>> Stashed changes
 
     handleChange = (event) => {
-      console.log(event.target.value)
       this.setState({
         [event.target.name]:event.target.value
       })
@@ -30,10 +45,12 @@ class Home extends Component {
         job: this.state.job,
         house: this.state.house
     };
-      
+    setCurr
+
     };
     
     render() {
+      const {currentUser, setCurrentUser} = this.context
       return (  
         <div className="w-100">
             <Card>
