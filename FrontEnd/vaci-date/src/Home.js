@@ -43,6 +43,7 @@ class Home extends Component {
         house: this.state.house
     }
     var lowest = "";
+    console.log(lowest)
     if(parseInt(userData.age) < parseInt(userData.job) )
     {
         lowest = userData.age
@@ -55,11 +56,33 @@ class Home extends Component {
     {
         lowest = userData.house
     }
+
+
+    if(lowest == "1")
+    {
+      lowest = "1A"
+    }
+    else if(lowest == "2")
+    {
+      lowest = "1B"
+    }
+    else if(lowest == "3")
+    {
+      lowest = "1C"
+    }
+    else if(lowest == "4")
+    {
+      lowest = "2"
+    }
+    else
+    {
+      lowest = "3"
+    }
     
     this.setState({ low:lowest }, () => {                              
         //callback
         console.log(this.state.low) // myname
-      });
+      }); 
     }
     
     render() {
@@ -162,15 +185,14 @@ class Home extends Component {
                                 /> 
                         </Form.Group>
                         <Button type="submit">Do the thing</Button>
-        
-                        <Link
-                        to={
-                        `MoreInfo/${this.state.low}`
-                        }> moreInfo </Link>
                     </Form>
                 </Card.Body>
             </Card>
-
+        
+        <Link
+        to={
+        `MoreInfo/${this.state.low}`
+        }> moreInfo </Link>
         
         </div>
       );

@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './Home';
 import axios from 'axios';
 import {UserContext, UserProvider} from './UserContext'
-import Maps from "./Maps"
+import maps from "./Maps"
   /*const handleChange = event => {
     this.setState({ username: event.target.value });
   }; */
@@ -27,7 +27,7 @@ axios.defaults.baseURL = 'http://localhost:5000/lucky-outpost-301600/us-central1
               <UserProvider>
                 <Route exact path='/' component={Home}/>
                 <Route path='/moreInfo/:id' component={moreInfo}/>
-                <Route path='/map' component={Maps}/>
+                <Route path='/map' component={maps}/>
               </UserProvider>
             </Switch>
           </Router>
