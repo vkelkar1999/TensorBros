@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Component, React, useState } from 'react';
 import { Container } from "react-bootstrap";
-import moreInfo from "./moreInfo"; 
+import moreInfo from "./MoreInfo"; 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './Home';
 
@@ -21,7 +21,7 @@ import Home from './Home';
           <Router>
             <Switch>
               <Route exact path='/' component={Home}/>
-              <Route path='/moreInfo' component={moreInfo}/>
+              <Route path='/MoreInfo/:id' component={moreInfo}/>
             </Switch>
           </Router>
         </Container>

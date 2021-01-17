@@ -1,7 +1,6 @@
 import { Component, React, useState } from 'react';
 import {Button, Form, Card} from 'react-bootstrap';
 import {Link, StaticRouter} from 'react-router-dom';
-import moreInfo from './moreInfo';
 
 
 const rankings = ['1A', '1B', '1C', '2', '3']
@@ -226,10 +225,9 @@ class Home extends Component {
           <Button type="submit">Do the thing</Button>
         </Form>
         <Link
-      to={{
-      pathname: "/moreInfo",
-      state: { fromDashboard: "Im going to kill myself" }
-  }}> moreInfo </Link>
+      to={
+        `MoreInfo/foo`
+  }> moreInfo </Link>
         
         </div>
       );
