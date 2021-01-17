@@ -55,7 +55,7 @@ class Home extends Component {
     {
         lowest = userData.house
     }
-
+    
     this.setState({ low:lowest }, () => {                              
         //callback
         console.log(this.state.low) // myname

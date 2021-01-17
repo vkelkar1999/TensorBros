@@ -53,7 +53,7 @@ import axios from 'axios';
 
   //const { errors } = this.state;
       return(
-        <div>
+        <div className='d-flex align-items-start justify-content-center' >
           <Card>
             <Card.Body>
               <Card.Title className="text-center">More Information About you</Card.Title>
