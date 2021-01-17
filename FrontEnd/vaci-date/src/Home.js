@@ -1,5 +1,7 @@
 import { Component, React, useState } from 'react';
 import {Button, Form, Card} from 'react-bootstrap';
+import {Link, StaticRouter} from 'react-router-dom';
+import moreInfo from './moreInfo';
 
 
 const rankings = ['1A', '1B', '1C', '2', '3']
@@ -13,10 +15,6 @@ class Home extends Component {
         house:"",
         job:"",
       };
-    }
-  
-    nextPath(path) {
-      this.props.history.push(path);
     }
 
     handleChange = (event) => {
@@ -227,10 +225,12 @@ class Home extends Component {
 
           <Button type="submit">Do the thing</Button>
         </Form>
-
-        <Button onClick={() => this.nextPath('./moreInfo') }>
-        change path 
-      </Button>
+        <Link
+      to={{
+      pathname: "/moreInfo",
+      state: { fromDashboard: "Im going to kill myself" }
+  }}> moreInfo </Link>
+        
         </div>
       );
     }

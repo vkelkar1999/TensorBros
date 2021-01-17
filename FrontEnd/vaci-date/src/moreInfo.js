@@ -2,7 +2,6 @@ import {Component, React} from 'react';
 import {Form, Card, Button} from 'react-bootstrap';
 
 
-
 class moreInfo extends Component {
     constructor(props){
       super(props);
@@ -46,6 +45,10 @@ class moreInfo extends Component {
             </Form>
             </Card.Body>
           </Card>
+
+          <div>
+          
+          </div>
         </div>
       )
     }
