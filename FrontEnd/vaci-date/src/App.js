@@ -10,6 +10,15 @@ import { Component, React, useState } from 'react';
 
 class App extends Component {
 
+  constructor() {
+    super();
+    this.state = {
+      name: "React"
+    };
+    
+    this.formSubmit = this.formSubmit.bind(this);
+  }
+
   setAge(event) {
     this.setState({
       age: event.target.value
@@ -27,7 +36,10 @@ class App extends Component {
   }
 
   formSubmit(event) {
-    
+    event.preventDefault();
+    this.setState({
+      form: [this.state.age, this.state.house, this.state.job]
+    });
     
   }
 
@@ -39,20 +51,23 @@ class App extends Component {
           <div></div>
             <input
               type="radio"
-              value="2"
+              value="1"
+              onChange={this.setAge}
             />
             65+ 
           <label>
             <input
               type="radio"
-              value="3"
+              value="2"
+              onChange={this.setAge}
             />
             55+ 
           </label>
           <label>
             <input
               type="radio"
-              value="4"
+              value="3"
+              onChange={this.setAge}
             />
             18+
           </label>
@@ -60,6 +75,7 @@ class App extends Component {
             <input
               type="radio"
               value="4"
+              onChange={this.setAge}
             />
             Child
           </label>
@@ -71,19 +87,22 @@ class App extends Component {
             <input
               type="radio"
               value="1"
+              onChange={this.setHousing}
             />
             Nursing Home 
           <label>
             <input
               type="radio"
-              value="3"
+              value="2"
+              onChange={this.setHousing}
             />
             Communal Housing 
           </label>
           <label>
             <input
               type="radio"
-              value="4"
+              value="3"
+              onChange={this.setHousing}
             />
             Private Residence
           </label>
@@ -94,12 +113,14 @@ class App extends Component {
             <input
               type="radio"
               value="1"
+              onChange={this.setJob}
             />
             Emergency Medical Provider
           <label>
             <input
               type="radio"
               value="2"
+              onChange={this.setJob}
             />
             Health Care Worker
           </label>
@@ -107,6 +128,7 @@ class App extends Component {
             <input
               type="radio"
               value="3"
+              onChange={this.setJob}
             />
             Services and Commercial Work
           </label>
@@ -114,6 +136,7 @@ class App extends Component {
             <input
               type="radio"
               value="4"
+              onChange={this.setJob}
             />
             Non-contact Job
           </label>
