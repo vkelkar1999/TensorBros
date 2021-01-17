@@ -28,9 +28,9 @@ import { Component, React, useState } from 'react';
     handleSubmit = (event) => { 
       event.preventDefault();
       const userData = { 
-        email: this.state.email,
-        house: this.state.house,
-        job: this.state.job
+        age: this.state.age,
+        job: this.state.job,
+        house: this.state.house
     };
       console.log(this.state)
     };
@@ -70,9 +70,59 @@ import { Component, React, useState } from 'react';
               onChange={this.handleChange}
             />
             </div> 
-            <div>
-            Selected option is : {this.state.age}
-            </div>
+            <div className="radio-buttons">
+            Emergency Medical Services
+            <input
+              value="1"
+              name="job"
+              type="radio"
+              onChange={this.handleChange}
+            />
+            Health Care Worker
+            <input
+              value="2"
+              name="job"
+              type="radio"
+              onChange={this.handleChange}
+            />
+            Commercial and Service Jobs
+            <input
+              value="3"
+              name="job"
+              type="radio"
+              onChange={this.handleChange}
+            />
+            Working from Home
+            <input
+              value="4"
+              name="job"
+              type="radio"
+              onChange={this.handleChange}
+            />
+            </div> 
+            <div className="radio-buttons">
+            Nursing Home
+            <input
+              value="1"
+              name="house"
+              type="radio"
+              onChange={this.handleChange}
+            />
+            Large Community
+            <input
+              value="2"
+              name="house"
+              type="radio"
+              onChange={this.handleChange}
+            />
+            Private Residence
+            <input
+              value="3"
+              name="house"
+              type="radio"
+              onChange={this.handleChange}
+            />
+            </div> 
           </div>
           <button type="submit">Do the thing</button>
         </form>
