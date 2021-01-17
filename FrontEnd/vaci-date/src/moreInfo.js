@@ -21,6 +21,7 @@ import {Form, Card, Button} from 'react-bootstrap';
 
    const handleSubmit = (event) => { 
       event.preventDefault();
+      console.log(this.state.email)
   } 
    
     
