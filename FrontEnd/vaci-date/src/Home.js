@@ -40,7 +40,6 @@ class Home extends Component {
       return (  
         <div>
         <form onSubmit={this.handleSubmit}>
-          <div class="mt-4">
           <div className="radio-buttons">
             65+
             <input
@@ -124,7 +123,7 @@ class Home extends Component {
               onChange={this.handleChange}
             />
             </div> 
-          </div>
+
           <button type="submit">Do the thing</button>
         </form>
 

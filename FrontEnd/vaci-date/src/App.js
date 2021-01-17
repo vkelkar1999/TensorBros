@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Component, React, useState } from 'react';
+import { Container } from "react-bootstrap";
 import moreInfo from "./moreInfo"; 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './Home';
@@ -16,14 +17,14 @@ import Home from './Home';
     
     render() {
       return (  
-        <div className='d-flex align-items-center justify-content-center' style = {{minHeight: "100vh"}}>
+        <Container className='d-flex align-items-center justify-content-center' style = {{minHeight: "100vh"}}>
           <Router>
             <Switch>
               <Route exact path='/' component={Home}/>
               <Route path='/moreInfo' component={moreInfo}/>
             </Switch>
           </Router>
-        </div>
+        </Container>
       );
     }
   }
