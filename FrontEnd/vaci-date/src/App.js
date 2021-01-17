@@ -17,7 +17,7 @@ import Home from './Home';
     
     render() {
       return (  
-        <Container className='d-flex align-items-center justify-content-center' style = {{minHeight: "100vh"}}>
+        <Container className='d-flex align-items-start justify-content-center' style = {{minHeight: "100vh"}}>
           <Router>
             <Switch>
               <Route exact path='/' component={Home}/>

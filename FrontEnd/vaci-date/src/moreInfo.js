@@ -1,5 +1,5 @@
 import {Component, React} from 'react';
-
+import {Form} from 'react-bootstrap';
 
 
 
@@ -29,7 +29,9 @@ class moreInfo extends Component {
     render(){
       return(
         <div>
-          Hello
+          <Form>
+
+          </Form>
         </div>
       )
     }

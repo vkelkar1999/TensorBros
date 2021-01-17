@@ -1,5 +1,5 @@
 import { Component, React, useState } from 'react';
-
+import {Button, Form, Card} from 'react-bootstrap';
 
 
 const rankings = ['1A', '1B', '1C', '2', '3']
@@ -20,7 +20,7 @@ class Home extends Component {
     }
 
     handleChange = (event) => {
-      console.log('I was triggered during render')
+      console.log(event.target.value)
       this.setState({
         [event.target.name]:event.target.value
       })
@@ -38,8 +38,107 @@ class Home extends Component {
     
     render() {
       return (  
-        <div>
-        <form onSubmit={this.handleSubmit}>
+        <div className="w-100">
+            <Card>
+                <Card.Body>
+                    <h2 className="text-center mb-4">Information About You</h2>
+                    <Form onSubmit={this.handleSubmit}>
+                        <Form.Group id="Age">
+                            <Form.Label>Age</Form.Label>
+                                <Form.Check
+                                    value="1B"
+                                    name="age"
+                                    label="65+"
+                                    type="radio"
+                                    onChange={this.handleChange}
+                                /> 
+
+                                <Form.Check
+                                    value="1C"
+                                    name="age"
+                                    label="55 - 64"
+                                    type="radio"
+                                    onChange={this.handleChange}
+                                /> 
+                                <Form.Check
+                                    value="2"
+                                    name="age"
+                                    label="18 - 54"
+                                    type="radio"
+                                    onChange={this.handleChange}
+                                /> 
+                                <Form.Check
+                                    value="3"
+                                    name="age"
+                                    label="Under 18"
+                                    type="radio"
+                                    onChange={this.handleChange}
+                                /> 
+                        </Form.Group>
+                    <Form.Group id="Job">
+                            <Form.Label>Age</Form.Label>
+                                <Form.Check
+                                    label="Emergency Medical Services"
+                                    value="1A"
+                                    name="job"
+                                    type="radio"
+                                    onChange={this.handleChange}
+                                /> 
+
+                                <Form.Check
+                                    label="Health Care Worker"
+                                    value="1B"
+                                    name="job"
+                                    type="radio"
+                                    onChange={this.handleChange}
+                                /> 
+
+                                <Form.Check
+                                    label="Commercial and Service Jobs"
+                                    value="1C"
+                                    name="job"
+                                    type="radio"
+                                    onChange={this.handleChange}
+                                /> 
+                                <Form.Check
+                                    label="Working from Home"
+                                    value="3"
+                                    name="job"
+                                    type="radio"
+                                    onChange={this.handleChange}
+                                /> 
+                        </Form.Group>
+                        <Form.Group id="House">
+                            <Form.Label>Housing Situation</Form.Label>
+                                <Form.Check
+                                    label="Nursing Home"
+                                    value="1A"
+                                    name="house"
+                                    type="radio"
+                                    onChange={this.handleChange}
+                                /> 
+
+                                <Form.Check
+                                    label="Large Community"
+                                    value="1C"
+                                    name="job"
+                                    type="radio"
+                                    onChange={this.handleChange}
+                                /> 
+
+                                <Form.Check
+                                    label="Private Residence"
+                                    value="3"
+                                    name="job"
+                                    type="radio"
+                                    onChange={this.handleChange}
+                                /> 
+                        </Form.Group>
+                    </Form>
+                </Card.Body>
+            </Card>
+        <Form onSubmit={this.handleSubmit}>
+        <h2>Age</h2>
           <div className="radio-buttons">
             65+
             <input
@@ -70,6 +169,7 @@ class Home extends Component {
               onChange={this.handleChange}
             />
             </div> 
+        <h2>Occupation</h2> 
             <div className="radio-buttons">
             Emergency Medical Services
             <input
@@ -100,6 +200,7 @@ class Home extends Component {
               onChange={this.handleChange}
             />
             </div> 
+        <h2>Housing Situation</h2>
             <div className="radio-buttons">
             Nursing Home
             <input
@@ -124,12 +225,12 @@ class Home extends Component {
             />
             </div> 
 
-          <button type="submit">Do the thing</button>
-        </form>
+          <Button type="submit">Do the thing</Button>
+        </Form>
 
-        <button onClick={() => this.nextPath('./moreInfo') }>
+        <Button onClick={() => this.nextPath('./moreInfo') }>
         change path 
-      </button>
+      </Button>
         </div>
       );
     }
