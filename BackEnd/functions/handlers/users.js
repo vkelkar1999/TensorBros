@@ -5,7 +5,7 @@ const firebase = require("firebase");
 firebase.initializeApp(config);
 
 
-exports.getUsers= (req, res) => { 
+exports.getUsers = (req, res) => { 
 	admin.firestore().collection('Users').get()
 		.then((data) =>{
 			let users = [];
