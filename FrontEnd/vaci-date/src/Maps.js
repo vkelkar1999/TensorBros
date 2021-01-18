@@ -41,29 +41,19 @@ export default function MyComponent() {
     libraries,
  })
 
- const mapRef = React.useRef();
- const onMapLoad = React.useCallback((map) => {
-   mapRef.current = map;
- }, []);
-
-const panOver = React.useCallback(({lat, lng}) => {
-  mapRef.current.pan({lat, lng});
-  mapRef.current.setZoom(12);
-}, []);
-
  if (loadError) return "Error loading maps";
  if (!isLoaded) return "Loading Maps";
 
  return (
     <div>
-      <Search panOver={panOver}/>
+      <Search />
         <GoogleMap 
             
             mapContainerStyle={containerStyle} 
             zoom={6.6}
             center={center}
             options={options}
-            onLoad={onMapLoad}
+            
          >
          </GoogleMap>
     </div>
@@ -81,17 +71,6 @@ function Search({panOver}) {
   return(
     <div className="search">
       <Combobox
-        onSelect={async (address) => {
-            try {
-              const results = await getGeocode({address});
-              const { lat, lng } = await getLatLng(results[0]);
-              panOver({lat, lng});
-              console.log(results[0]);
-            } catch(error){
-              console.log("error!");
-            }
-        console.log(address);
-      }}
       >
       <ComboboxInput
         value={value} 
