@@ -18,12 +18,12 @@ import axios from 'axios';
       const [email, setEmail] = useState('');
       const [number, setNumber] = useState('');
       const [errors, setError] = useState('');
-      const [category, setCategory] = useState('');
+      const [category, setCategory] = useState(JSON.stringify(props.match.params["id"]).slice(1, -1));
 
 
       // Category that is passed
       const {id} = props.match.params;
-      console.log(id)
+      
 
       const dates = {
         "1A" : "2021-01-15",
@@ -34,9 +34,17 @@ import axios from 'axios';
       }
     
    const handleSubmit = (event) => {
-      console.log(id) 
-      //event.preventDefault();
-      //console.log(this.state.email)
+      
+      event.preventDefault();
+      const userData = {
+        "email":email,
+        "phoneNumber":number,
+        "category":category
+      }
+      console.log(userData)
+      axios.post('/users', userData)
+      .then((res) => {console.log(res)})
+      .catch((err) => console.log(err));
   } ; 
 
    /* const validateForms()
