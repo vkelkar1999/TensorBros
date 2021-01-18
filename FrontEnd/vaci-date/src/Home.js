@@ -204,7 +204,7 @@ class Home extends Component {
     return(
     <Link
         to={
-        `MoreInfo`
+        `MoreInfo/${this.props.message}`
         }> MoreInfo </Link>
     )
   }

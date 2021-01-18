@@ -24,11 +24,11 @@ import axios from 'axios';
       const {id} = props.match.params;
       console.log(id)
     
-  /* const handleSubmit = (event) => {
+   const handleSubmit = (event) => {
       console.log(id) 
       //event.preventDefault();
       //console.log(this.state.email)
-  } ; */
+  } ; 
 
    /* const validateForms()
      console.log(userData)
@@ -58,11 +58,11 @@ import axios from 'axios';
 
   //const { errors } = this.state;
       return(
-        /*<div className='d-flex align-items-start justify-content-center' >
+        <div className='d-flex align-items-start justify-content-center' >
           <Card>
             <Card.Body>
               <Card.Title className="text-center">More Information About you</Card.Title>
-            <Form>
+            <Form onSubmit={handleSubmit}>
                 <Form.Group id="email">
                   <Form.Label className="text-center" style={{width: "100%"}} id="email">Email</Form.Label>
                   <Form.Control type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} required/>
@@ -77,10 +77,7 @@ import axios from 'axios';
             <h1>You are in group {id} in California.</h1>
           </Card>
           <p>Based off of how the vaccine are going we expect your group to be ready in blank days</p>
-        </div> */
-        <div>
-          Testing
-        </div>
+        </div> 
       );
   }
   export default MoreInfo;
