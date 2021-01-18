@@ -14,7 +14,7 @@ import MoreInfo from './moreInfo'
 
   const rankings = ['1A', '1B', '1C', '2', '3']
   //Local testing
-axios.defaults.baseURL = 'http://localhost:5000/lucky-outpost-301600/us-central1/api'
+axios.defaults.baseURL = 'https://us-central1-lucky-outpost-301600.cloudfunctions.net/api'
   class App extends Component {
     
     
