@@ -18,11 +18,20 @@ import axios from 'axios';
       const [email, setEmail] = useState('');
       const [number, setNumber] = useState('');
       const [errors, setError] = useState('');
+      const [category, setCategory] = useState('');
 
 
       // Category that is passed
       const {id} = props.match.params;
       console.log(id)
+
+      const dates = {
+        "1A" : "2021-01-15",
+        "1B" : "2021-02-01",
+        "1C" : "2021-03-20",
+        "2" : "2021-09-01",
+        "3" : "2022-01-01"
+      }
     
    const handleSubmit = (event) => {
       console.log(id) 
@@ -76,7 +85,7 @@ import axios from 'axios';
             </Card.Body>
             <h1>You are in group {id} in California.</h1>
           </Card>
-          <p>Based off of how the vaccine are going we expect your group to be ready in blank days</p>
+          <p>Based off of how the vaccine are going we expect your group to be ready by {dates[id]}</p>
         </div> 
       );
   }
