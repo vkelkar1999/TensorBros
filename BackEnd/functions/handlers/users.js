@@ -3,12 +3,11 @@ const { admin, db } = require("../util/admin");
 const config = require('../util/config')
 const firebase = require("firebase");
 firebase.initializeApp(config);
+
 // const storage = firebase.storage();
-// console.log(storage)
 // exports.getStorage = () =>{
 // 	return storage;
 // }
-
 exports.getUsers = (req, res) => { 
 	admin.firestore().collection('Users').get()
 		.then((data) =>{
