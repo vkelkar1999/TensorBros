@@ -16,3 +16,5 @@ If they are already eligible, we ask for their zip code to provide them with the
 cdph.ca.gov/Programs/CID/DCDC/CDPH%20Document%20Library/COVID-19/COVID-19-Vaccination-Plan-California-Interim-Draft_V1.0.pdf
 
 Deployed in Google Cloud and Firebase, we are using Tensorflow to build our prediction model and developing the front-end in react.
+
+Here is the [Google Colab notebook](https://colab.research.google.com/drive/1J9ogUPkB7AVnPFW2ty-QFpt5KXdQ-GjX#scrollTo=b6UNqIV3IYr6) we used to train our forecasting model.
