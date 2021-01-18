@@ -1,41 +1,30 @@
 import { Component, React, useState, useContext } from 'react';
 import {Button, Form, Card} from 'react-bootstrap';
 import {Link, StaticRouter} from 'react-router-dom';
-import { useUser } from './UserContext';
-
-
-const rankings = ['1A', '1B', '1C', '2', '3']
-
 
 
 class Home extends Component {
-  static contextType = useUser
     constructor(props) {
       super(props);
       this.state = {
         age:"",
         house:"",
         job:"",
-        low:"test"
+        low:"",
+        result: true
       };
     }
-    componentDidMount(){
-      const user = this.context
-      console.log(user)
-    }
-    nextPath(path) {
-      this.props.history.push(path);
-    }
-
     handleChange = (event) => {
       this.setState({ [event.target.name]:event.target.value }, () => {                              
         //callback
-        console.log(this.state.low) // myname
+        console.log(this.state.low)
       });
       
     };
 
-    handleSubmit = (event) => { 
+
+
+    handleSubmit = async (event) => { 
       event.preventDefault();
       const userData = { 
         age: this.state.age,
@@ -58,19 +47,19 @@ class Home extends Component {
     }
 
 
-    if(lowest == "1")
+    if(lowest === "1")
     {
       lowest = "1A"
     }
-    else if(lowest == "2")
+    else if(lowest === "2")
     {
       lowest = "1B"
     }
-    else if(lowest == "3")
+    else if(lowest === "3")
     {
       lowest = "1C"
     }
-    else if(lowest == "4")
+    else if(lowest === "4")
     {
       lowest = "2"
     }
@@ -81,12 +70,28 @@ class Home extends Component {
     
     this.setState({ low:lowest }, () => {                              
         //callback
-        console.log(this.state.low) // myname
+        console.log(this.state.low) 
       }); 
+
+      await new Promise(r => setTimeout(r, 500));
+
+      if(this.state.low === "1A")
+      {
+        alert("You are eligible to take the vaccine! Please click the link.")
+        this.setState({ result:false }, () => {                              
+          //callback
+          console.log(this.state.result) 
+        }); 
+
+      }
+      else
+      {
+        alert("You are ineligible to take the vaccine! Please go to more Info.")
+      }
+
     }
-    
+
     render() {
-      const {currentUser, setCurrentUser} = this.context
       return (  
         <div className="d-flex align-items-start justify-content-center"  style = {{minHeight: "100vh"}}>
             <Card>
@@ -188,16 +193,29 @@ class Home extends Component {
                     </Form>
                 </Card.Body>
             </Card>
-        
-        <Link
-        to={
-        `MoreInfo/${this.state.low}`
-        }> moreInfo </Link>
-        
+            { this.state.result ? <InEligible message={this.state.low} />: <Eligible /> }
         </div>
       );
     }
   }
+
+  class InEligible extends Component{
+    render(){
+    return(
+    <Link
+        to={
+        `MoreInfo`
+        }> MoreInfo </Link>
+    )
+  }
+}
+
+  const Eligible = () => (
+    <Link
+        to={
+        `Map`
+        }> Eligible </Link>
+  )
 
 
 export default Home;

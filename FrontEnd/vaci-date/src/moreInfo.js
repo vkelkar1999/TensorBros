@@ -1,6 +1,7 @@
 import {Component, React, useState} from 'react';
 
 import {Alert, Form, Card, Button} from 'react-bootstrap';
+import {Link, useHistory} from 'react-router-dom';
 import axios from 'axios';
 
 /*class moreInfo extends Component {
@@ -22,11 +23,13 @@ import axios from 'axios';
       // Category that is passed
       const {id} = props.match.params;
       console.log(id)
-
-   const handleSubmit = (event) => { 
-      event.preventDefault();
+    
+  /* const handleSubmit = (event) => {
+      console.log(id) 
+      //event.preventDefault();
       //console.log(this.state.email)
-  } ;
+  } ; */
+
    /* const validateForms()
      console.log(userData)
      axios.post('/users', userData)
@@ -55,11 +58,11 @@ import axios from 'axios';
 
   //const { errors } = this.state;
       return(
-        <div className='d-flex align-items-start justify-content-center' >
+        /*<div className='d-flex align-items-start justify-content-center' >
           <Card>
             <Card.Body>
               <Card.Title className="text-center">More Information About you</Card.Title>
-            <Form onSubmit={handleSubmit}>
+            <Form>
                 <Form.Group id="email">
                   <Form.Label className="text-center" style={{width: "100%"}} id="email">Email</Form.Label>
                   <Form.Control type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} required/>
@@ -71,7 +74,12 @@ import axios from 'axios';
               <Button className="w-100" type="submit">Submit</Button>
             </Form>
             </Card.Body>
+            <h1>You are in group {id} in California.</h1>
           </Card>
+          <p>Based off of how the vaccine are going we expect your group to be ready in blank days</p>
+        </div> */
+        <div>
+          Testing
         </div>
       );
   }
