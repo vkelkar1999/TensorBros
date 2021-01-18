@@ -20,8 +20,8 @@ import "@reach/combobox/styles.css";
 
 
 const containerStyle = {
-  width: '900px',
-  height: '900px'
+  width: '1960px',
+  height: '1080px'
 };
 const center = {
   lat: 37.2884,
@@ -41,8 +41,6 @@ export default function MyComponent() {
     libraries,
  })
 
- const [markers, setMarkers] = React.useState([]);
-
  const mapRef = React.useRef();
  const onMapLoad = React.useCallback((map) => {
    mapRef.current = map;
@@ -60,6 +58,7 @@ const panOver = React.useCallback(({lat, lng}) => {
     <div>
       <Search panOver={panOver}/>
         <GoogleMap 
+            
             mapContainerStyle={containerStyle} 
             zoom={6.6}
             center={center}
