@@ -60,7 +60,7 @@ export default function MyComponent() {
  );
 }
 
-function Search({panOver}) {
+function Search({}) {
   const {ready, value, suggestions: {status, data}, setValue, clearSuggestions} = usePlacesAutocomplete({
     requestOptions: {
       location: {lat: () => 37.2884, lng: () => -118.8233},
