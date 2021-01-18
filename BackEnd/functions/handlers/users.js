@@ -22,8 +22,9 @@ exports.getUsers = (req, res) => {
 
 exports.addUsers = (req, res) =>{
 	const user = {
-		 Email: req.body.email,
-		 PhoneNumber: req.body.phoneNumber
+		 email: req.body.email,
+		 phoneNumber: req.body.phoneNumber,
+		 category: req.body.category
 	}
 	db.collection('Users').add(user)
 	.then((doc) => { 
